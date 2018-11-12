@@ -31,8 +31,6 @@ public class Calculo {
 
                 tabela.get(keys.get(execucao)).add(Math.round(media));
             }
-
-            System.out.println(tabela);
             execucao++;
         }
 

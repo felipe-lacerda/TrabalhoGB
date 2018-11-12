@@ -36,7 +36,7 @@ public class Cenarios {
             finish = nanoTime();
             time = finish - start;
             execucao++;
-            dados.get("bubbleSort").add(time);
+            dados.get("BubbleSort").add(time);
         }
         execucao = 1;
     }

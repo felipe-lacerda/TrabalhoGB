@@ -32,7 +32,7 @@ public class Inicializar {
 
     public static HashMap<String, ArrayList> inicializarHasMap() {
         HashMap<String, ArrayList> hashMap = new HashMap<>();
-        hashMap.put("bubbleSort", new ArrayList());
+        hashMap.put("BubbleSort", new ArrayList());
         hashMap.put("Insertion", new ArrayList());
         hashMap.put("Selection", new ArrayList());
         hashMap.put("Heap", new ArrayList());
