@@ -9,7 +9,7 @@ public class main {
         Integer size = 128;
 
         //Cenario 1
-        while (execucao <= 2) {
+        while (execucao <= 10) {
             size *= execucao;
             tabela = new Cenarios(Inicializar.inicializarChaveUnica(size, null, false)).run(tabela);
             execucao++;
@@ -21,7 +21,7 @@ public class main {
         tabela = Inicializar.inicializarHasMap();
         execucao = 1;
         size = 128;
-        while (execucao <= 2) {
+        while (execucao <= 10) {
             size *= execucao;
             tabela = new Cenarios(Inicializar.inicializarChaveUnica(size, null, true)).run(tabela);
             execucao++;
@@ -33,7 +33,7 @@ public class main {
         tabela = Inicializar.inicializarHasMap();
         execucao = 1;
         size = 128;
-        while (execucao <= 2) {
+        while (execucao <= 10) {
             size *= execucao;
             tabela = new Cenarios(Inicializar.inicializarChaveUnica(size, true, null)).run(tabela);
             execucao++;
