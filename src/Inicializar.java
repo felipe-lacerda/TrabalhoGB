@@ -1,4 +1,3 @@
-import java.sql.Array;
 import java.util.*;
 import java.util.stream.Stream;
 
@@ -11,7 +10,7 @@ import static java.util.stream.Collectors.toList;
 public class Inicializar {
 
     public static Integer[] inicializarChaveUnica(final Integer size, final Boolean aleatoria, final Boolean inverter) {
-        Integer[] array = Stream.generate(() -> new Random().nextInt(size))
+        Integer[] array = Stream.generate(() -> new Random().nextInt())
                 .distinct()
                 .limit(size)
                 .collect(toList())
@@ -25,6 +24,31 @@ public class Inicializar {
 
         if (inverter) {
             reverse(asList(array));
+        }
+
+        return array;
+    }
+
+    public static Integer[] inicializarChaveDuplicada(final Integer size, final Integer porcetagemRepetidos) {
+        ArrayList<Integer> arrayList = new ArrayList();
+
+        Integer[] array = new Integer[size];
+
+        final Integer repetidos = (int) Math.floor(size * ((double) porcetagemRepetidos/100));
+
+        while (arrayList.size() < size) {
+            Integer number = new Random().nextInt();
+            for (int i = 1; i <= repetidos && arrayList.size() != size; i++) {
+                arrayList.add(number);
+            }
+        }
+
+        Integer count = 0;
+
+        while (arrayList.size() != 0){
+            Integer posicao = new Random().nextInt(arrayList.size());
+            array[count++] = arrayList.get(posicao);
+            arrayList.remove(arrayList.get(posicao));
         }
 
         return array;

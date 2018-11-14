@@ -27,7 +27,7 @@ public class Calculo {
                 final Long x1 = Math.round(media - total);
                 final Long x2 = Math.round(media + total);
 
-                media = times.stream().filter(time -> (Long) time > x1 && (Long) time < x2).mapToLong(time -> Long.valueOf(time.toString())).average().getAsDouble();
+                media = times.stream().filter(time -> (Long) time >= x1 && (Long) time <= x2).mapToLong(time -> Long.valueOf(time.toString())).average().getAsDouble();
 
                 tabela.get(keys.get(execucao)).add(Math.round(media));
             }

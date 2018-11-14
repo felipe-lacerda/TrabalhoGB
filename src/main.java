@@ -9,7 +9,7 @@ public class main {
         Integer size = 128;
 
         //Cenario 1
-        while (execucao <= 10) {
+        while (execucao <= 5) {
             size *= execucao;
             tabela = new Cenarios(Inicializar.inicializarChaveUnica(size, null, false)).run(tabela);
             execucao++;
@@ -21,7 +21,7 @@ public class main {
         tabela = Inicializar.inicializarHasMap();
         execucao = 1;
         size = 128;
-        while (execucao <= 10) {
+        while (execucao <= 5) {
             size *= execucao;
             tabela = new Cenarios(Inicializar.inicializarChaveUnica(size, null, true)).run(tabela);
             execucao++;
@@ -33,7 +33,7 @@ public class main {
         tabela = Inicializar.inicializarHasMap();
         execucao = 1;
         size = 128;
-        while (execucao <= 10) {
+        while (execucao <= 5) {
             size *= execucao;
             tabela = new Cenarios(Inicializar.inicializarChaveUnica(size, true, null)).run(tabela);
             execucao++;
@@ -41,7 +41,16 @@ public class main {
         System.out.println(tabela);
         //TODO salvar tabela em arquivo
 
-        //Obs diminui o while para uns 6 para testar
-
+        //Cenario 4
+        tabela = Inicializar.inicializarHasMap();
+        execucao = 1;
+        size = 128;
+        while (execucao <= 5) {
+            size *= execucao;
+            tabela = new Cenarios(Inicializar.inicializarChaveDuplicada(size, 5)).run(tabela);
+            execucao++;
+        }
+        System.out.println(tabela);
+        //TODO salvar tabela em arquivo
     }
 }
