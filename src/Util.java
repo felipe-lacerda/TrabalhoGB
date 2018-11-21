@@ -1,3 +1,10 @@
+/*
+Grupo 1
+Felipe Lacerda da Silva
+Felipe Flores
+John Lenon Marques de Oliveira
+ */
+
 import java.util.*;
 import java.util.stream.Stream;
 
@@ -7,34 +14,34 @@ import static java.util.Collections.*;
 import static java.util.Objects.nonNull;
 import static java.util.stream.Collectors.toList;
 
-public class Inicializar {
+public class Util {
 
-    public static Integer[] inicializarChaveUnica(final Integer size, final Boolean aleatoria, final Boolean inverter) {
+    public static Integer[] initializeArrayUniqueKeys(final Integer size, final Boolean random, final Boolean reverse) {
         Integer[] array = Stream.generate(() -> new Random().nextInt())
                 .distinct()
                 .limit(size)
                 .collect(toList())
                 .toArray(new Integer[0]);
 
-        if (nonNull(aleatoria) && aleatoria) {
+        if (nonNull(random) && random) {
             return array;
         }
 
         stream(array).sorted();
 
-        if (inverter) {
+        if (reverse) {
             reverse(asList(array));
         }
 
         return array;
     }
 
-    public static Integer[] inicializarChaveDuplicada(final Integer size, final Integer porcetagemRepetidos) {
+    public static Integer[] initializeArrayDuplicateKeys(final Integer size, final Integer repeatedPercentage) {
         ArrayList<Integer> arrayList = new ArrayList();
 
         Integer[] array = new Integer[size];
 
-        final Integer repetidos = (int) Math.floor(size * ((double) porcetagemRepetidos/100));
+        final Integer repetidos = (int) Math.floor(size * ((double) repeatedPercentage / 100));
 
         while (arrayList.size() < size) {
             Integer number = new Random().nextInt();
@@ -45,18 +52,18 @@ public class Inicializar {
 
         Integer count = 0;
 
-        while (arrayList.size() != 0){
-            Integer posicao = new Random().nextInt(arrayList.size());
-            array[count++] = arrayList.get(posicao);
-            arrayList.remove(arrayList.get(posicao));
+        while (arrayList.size() != 0) {
+            Integer position = new Random().nextInt(arrayList.size());
+            array[count++] = arrayList.get(position);
+            arrayList.remove(arrayList.get(position));
         }
 
         return array;
     }
 
-    public static HashMap<String, ArrayList> inicializarHasMap() {
+    public static HashMap<String, ArrayList> initializeHashMap() {
         HashMap<String, ArrayList> hashMap = new HashMap<>();
-        hashMap.put("BubbleSort", new ArrayList());
+        hashMap.put("Bubble", new ArrayList());
         hashMap.put("Insertion", new ArrayList());
         hashMap.put("Selection", new ArrayList());
         hashMap.put("Heap", new ArrayList());
