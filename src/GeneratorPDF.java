@@ -1,3 +1,9 @@
+/*
+Lib: itext-5.0.5
+Link: http://www.java2s.com/Code/Jar/i/Downloaditext505jar.htm
+Tutorial: https://www.devmedia.com.br/gerando-pdf-itext/18843
+ */
+
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
